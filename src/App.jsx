@@ -22,7 +22,7 @@ const FetchData = () => {
   const [errMsg, setErrMsg] = useState('');
   const [err, setErr] = useState(false);
   const url = `http://universities.hipolabs.com/search?country=${country}`
-  const dataFetch = async (url) => {
+  const dataFetch = async () => {
     try {
       const fetchData = await fetch(url);
       const response = await fetchData.json();
