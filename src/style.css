@@ -3,7 +3,7 @@
     color: white;
     max-width: 800px;
     margin-inline: auto;
-    width: 80%;
+    width: 96%;
     overflow-x: hidden;
     word-wrap: break-word;
 }
@@ -12,13 +12,13 @@ h1 {
     text-align: center;
     margin-top: .5rem;
     margin-bottom: 1rem;
-    font-size: 2.3rem;
+    font-size: 2.1rem;
 }
 
 form {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 input {
@@ -27,19 +27,21 @@ input {
     border-radius: .4rem;
     height: 35px;
     padding-left: .4rem;
-    width: 56%;
+    width: 65%;
     outline: none;
 }
 
 div.list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
+    border: 2px solid white;
+    /* height: 100px; */
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    margin: 0;
 }
 
 ul {
-    /* padding-left: 0; */
+    padding-left: 0;
     list-style-type: decimal;
 }
 
@@ -50,4 +52,29 @@ li {
 
 a {
     text-decoration: none;
+}
+div.img{
+    display: flex;
+    justify-content: center;
+
+}
+div.img img{
+     width: 30%;
+     /* height: 200px; */
+     border-radius: 50%;
+     object-fit: cover;
+     object-position: center;
+
+}
+div.user{
+    opacity: .8;
+}
+h2{
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: .3rem;
+}
+div.username, .login, .bio{
+    display: flex;
+    justify-content: space-between;
 }

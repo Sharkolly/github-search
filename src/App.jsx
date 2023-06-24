@@ -16,24 +16,24 @@ const FetchData = () => {
     color: 'red'
   }
 
-  const [country, setCountry] = useState('Nigeria');
-  const [fetchData, setFetchData] = useState([]);
+  const [country, setCountry] = useState('Sharkolly');
+  const [fetchDataS, setFetchDataS] = useState([]);
   const [loading, setLoading] = useState(false);
   const [errMsg, setErrMsg] = useState('');
   const [err, setErr] = useState(false);
-  const url = `http://universities.hipolabs.com/search?country=${country}`
+  const url = `https://api.github.com/users/${country}`
   const dataFetch = async () => {
     try {
-      const fetchData = await fetch(url);
-      const response = await fetchData.json();
-      setFetchData(response);
-      // console.log(FetchData);
+      const fetchDataa = await fetch(url);
+      const response = await fetchDataa.json();
+      setFetchDataS(response);
     }
     catch (e) {
       setErrMsg(e.message);
       setErr(true);
     }
   }
+  console.log(fetchDataS);
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -41,14 +41,15 @@ const FetchData = () => {
       setLoading(false);
     }, 2000);
   }, [url]);
+
   if (country === '') {
-    setCountry('Nigeria');
+    setCountry('Sharkolly')
   }
   return (
     <div className='body'>
-      <h1 className='text-center w-full font-bold text-2xl my-5'>List of Universities in {country}</h1>
+      <h1 className='text-center w-full font-bold text-2xl my-5'>Github Profile Search</h1>
       <Search country={country} setCountry={setCountry} />
-      {err ? <h3 style={h3Styling}>{errMsg} ....</h3> : loading ? <p style={styling}>Loading Data....</p> : <Lists lists={lists} fetchData={fetchData} />
+      {err ? <h3 style={h3Styling}>{errMsg} ....</h3> : loading ? <p style={styling}>Loading Data....</p> : <Lists lists={lists} fetchDataS={fetchDataS} />
       }
     </div >
   )
